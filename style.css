@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Global reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Root variables */
+:root{
+    /* Color variables */
+    --primary-color: #0167F6;
+    --panel-color: #FFF;
+    --text-color: #040404;
+    --black-light-color: #666666;
+    --border-color: #CDCDCD;
+    --toggle-color: #DDD;
+    --box1-color: #4DA3FF;
+    --box2-color: #FFE6AC;
+    --box3-color: #E7D1FC;
+    --title-icon-color: #FFF;
+
+    /* Transition variables */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+/* Navigation styles */
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 320px;  /* Set navigation panel width */
+    padding: 40px 40px 40px 80px;
+    background-color: var(--panel-color);
+}
+
+nav .logo-image{
+    min-width: 80px;
+    padding: 12px 16px;
+}
+
+nav .logo-image img{
+    width: 120px;
+    object-fit: cover;  /* Ensure logo fits within container */
+}
+
+/* Menu items styles */
+nav .menu-items{
+    margin-top: 40px;
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* List styles for menu items */
+.menu-items li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+/* Link styles for menu items */
+.menu-items li a{
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 12px;
+    gap: 16px;
+}
+
+/* Icon styles for menu items */
+.menu-items li a i{
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--black-light-color);
+}
+
+/* Text styles for menu items */
+.menu-items li a .link-name{
+    color: var(--black-light-color);
+    font-size: 16px;
+}
+
+/* Hover effects for navigation links */
+.nav-links li a:hover i,
+.nav-links li a:hover .link-name{
+    color: var(--primary-color);
+}
