@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <title>Add Product</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <!-- Left Section -->
+            <div class="top-bar-left">
+                <!-- Hamburger Button -->
+                <div class="hamburger-btn">
+                    <i class="bi bi-list"></i>
+                </div>
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="images/logo.png" alt="">
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="top-bar-right">
+                <!-- Notifications -->
+                <div class="notifications">
+                    <i class="bi bi-bell"></i>
+                </div>
+                <!-- Profile -->
+                <div class="profile">
+                    <img src="images/profile.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- Side Bar -->
+        <aside class="side-bar">
+            <!-- Nav Bar Links -->
+            <ul class="navbar-links navbar-links-1">
+                <li class="active">
+                    <a href="#">
+                        <span class="nav-icon">
+                            <i class="bi bi-house"></i>
+                        </span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">
+                            <i class="bi bi-bag"></i>
+                        </span>
+                        <span class="nav-text">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">
+                            <i class="bi bi-receipt"></i>
+                        </span>
+                        <span class="nav-text">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">
+                            <i class="bi bi-people"></i>
+                        </span>
+                        <span class="nav-text">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">
+                            <i class="bi bi-gear"></i>
+                        </span>
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Breadcrumb Navigation -->
+            <div class="container-lg">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb" style="background-color: #FFFFFF; padding: 0px;">
+                      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Add product</li>
+                    </ol>
+                </nav>
+                <!-- Form Section -->
+                <div class="row justify-content-center my-5">
+                    <div class="col-lg-6">
+                        <form>
+                            <!-- Product Details -->
+                            <h2>Product Details</h2>
+                            <div class="form-group">
+                                <label for="product-name" class="form-label">Product name</label>
+                                <input type="text" class="form-control" id="product-name" placeholder="e.g. Delamere Yoghurt">
+                            </div>
+                            
+                            <div class="form-group mb-40">
+                                <label for="product-description">Description</label>
+                                <textarea class="form-control" id="product-description" rows="3"></textarea>
+                            </div>
+                            
+                            <!-- Image -->
+                            <h2>Image</h2>
+                            <div class="form-group mb-40">
+                                <label for="productImage">Product Image</label>
+                                <input type="file" class="form-control-file" id="productImage" accept="image/*">
+                                <small id="imageHelp" class="form-text text-muted">Upload an image for the product.</small>
+                            </div>
+
+                            <!-- Variants -->
+                            <h2>Variants</h2>
+                            <button type="button" class="btn btn-link px-0" id="add-variant-btn"><i class="bi bi-plus-lg"></i> Add Variant</button>
+                            <div id="variants-section" class="mb-4"></div>
+
+                            <!-- Save Button -->
+                            <button type="button" class="btn btn-primary btn-block" id="save-btn">Save</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Custom Script -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

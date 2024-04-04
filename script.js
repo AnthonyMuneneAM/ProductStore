@@ -1,76 +1,79 @@
+// Get the hamburger button and sidebar
 var hamburgerBtn = document.querySelector('.hamburger-btn');
 var sideBar = document.querySelector('.side-bar');
 
-hamburgerBtn.addEventListener('click', sidebarToggle);
-function sidebarToggle(){
-	sideBar.classList.toggle('active');
+// Toggle the sidebar when the hamburger button is clicked
+hamburgerBtn.addEventListener('click', toggleSidebar);
+function toggleSidebar(){
+    sideBar.classList.toggle('active');
 }
 
+// Handle the click event for the "Add Variant" button
 document.getElementById("add-variant-btn").addEventListener("click", function() {
     console.log("Button clicked!");
 
-    // Create a new mini form container
+    // Create a new section for adding a variant
     var variantSection = document.createElement("div");
     variantSection.classList.add("variant-section", "form-group");
 
-    // Add dropdown for variant option
+    // Add a dropdown for selecting the variant option
     var variantOptionSelect = document.createElement("select");
     variantOptionSelect.classList.add("form-control", "mb-3"); // Add margin-bottom
-    // Add option values (e.g., size, flavor)
+    // Add option values like size, flavor, etc.
     variantOptionSelect.innerHTML = `
-        <option value="size">Size</option>
+        <option value="volume">Volume</option>
         <option value="flavor">Flavor</option>
     `;
     variantSection.appendChild(variantOptionSelect);
 
-    // Add input field for variant value
+    // Add an input field for entering the variant value
     var variantValueInput = document.createElement("input");
     variantValueInput.type = "text";
     variantValueInput.classList.add("form-control", "mb-3"); // Add margin-bottom
     variantValueInput.placeholder = "Variant Value";
     variantSection.appendChild(variantValueInput);
 
-    // Add "Add new attribute" button to allow adding more attributes
+    // Add a button to allow adding more attributes
     var addAttributeBtn = document.createElement("button");
     addAttributeBtn.type = "button";
-    addAttributeBtn.classList.add("btn", "btn-secondary", "mb-3", "mr-3");
+    addAttributeBtn.classList.add("btn", "btn-link", "mb-3", "mr-3", "px-0");
     addAttributeBtn.textContent = "Add new attribute";
     variantSection.appendChild(addAttributeBtn);
 
-    // Add input field for price
+    // Add an input field for entering the price
     var priceInput = document.createElement("input");
     priceInput.type = "number";
     priceInput.classList.add("form-control", "mb-3"); // Add margin-bottom
     priceInput.placeholder = "Price";
     variantSection.appendChild(priceInput);
 
-    // Add "Done" button to confirm variant addition
+    // Add a button to confirm the addition of the variant
     var doneBtn = document.createElement("button");
     doneBtn.type = "button";
-    doneBtn.classList.add("btn", "btn-success", "mb-3", "mr-3");
+    doneBtn.classList.add("btn", "btn-dark", "mb-3", "mr-3");
     doneBtn.textContent = "Done";
     variantSection.appendChild(doneBtn);
 
-    // Add the new mini form container to the variants section
+    // Add the new variant section to the page
     document.getElementById("variants-section").appendChild(variantSection);
 
-    // Attach event listener to the "Add new attribute" button
+    // Handle the click event for the "Add new attribute" button
     addAttributeBtn.addEventListener("click", function() {
-        // Add line break for spacing
+        // Add a line break for spacing
         variantSection.appendChild(document.createElement("br"));
-        // Add dropdown for variant option
+        // Add a dropdown for selecting the variant option
         var newVariantOptionSelect = document.createElement("select");
         newVariantOptionSelect.classList.add("form-control", "mb-3"); // Add margin-bottom
-        // Add option values (e.g., size, flavor)
+        // Add option values like size, flavor, etc.
         newVariantOptionSelect.innerHTML = `
-            <option value="size">Size</option>
+            <option value="volume">Volume</option>
             <option value="flavor">Flavor</option>
         `;
         variantSection.insertBefore(newVariantOptionSelect, addAttributeBtn);
 
-        // Add line break for spacing
+        // Add a line break for spacing
         variantSection.appendChild(document.createElement("br"));
-        // Add input field for variant value
+        // Add an input field for entering the variant value
         var newVariantValueInput = document.createElement("input");
         newVariantValueInput.type = "text";
         newVariantValueInput.classList.add("form-control", "mb-3"); // Add margin-bottom
@@ -78,9 +81,9 @@ document.getElementById("add-variant-btn").addEventListener("click", function() 
         variantSection.insertBefore(newVariantValueInput, addAttributeBtn);
     });
 
-    // Attach event listener to the "Done" button
+    // Handle the click event for the "Done" button
     doneBtn.addEventListener("click", function() {
-        // Get selected option and variant value
+        // Get the selected option and variant value
         var selectedOption = variantOptionSelect.options[variantOptionSelect.selectedIndex].value;
         var variantValue = variantValueInput.value;
         var price = priceInput.value;
@@ -94,7 +97,7 @@ document.getElementById("add-variant-btn").addEventListener("click", function() 
             attributes.push(attribute);
         });
 
-        // Display variant details in a card with an edit button
+        // Display the variant details in a card with an edit button
         var variantCard = document.createElement("div");
         variantCard.classList.add("card", "mb-3");
 
@@ -119,7 +122,8 @@ document.getElementById("add-variant-btn").addEventListener("click", function() 
         cardBody.appendChild(editBtn);
         variantCard.appendChild(cardBody);
 
-        variantSection.innerHTML = ''; // Clear the mini form
+        // Clear the mini form and add the variant card to the section
+        variantSection.innerHTML = '';
         variantSection.appendChild(variantCard);
     });
 });
