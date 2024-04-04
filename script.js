@@ -16,11 +16,10 @@ document.getElementById("add-variant-btn").addEventListener("click", function() 
     // Add dropdown for variant option
     var variantOptionSelect = document.createElement("select");
     variantOptionSelect.classList.add("form-control", "mb-3"); // Add margin-bottom
-    // Add option values based on your requirements (e.g., size, flavor)
+    // Add option values (e.g., size, flavor)
     variantOptionSelect.innerHTML = `
         <option value="size">Size</option>
         <option value="flavor">Flavor</option>
-        <!-- Add more options if needed -->
     `;
     variantSection.appendChild(variantOptionSelect);
 
@@ -62,11 +61,10 @@ document.getElementById("add-variant-btn").addEventListener("click", function() 
         // Add dropdown for variant option
         var newVariantOptionSelect = document.createElement("select");
         newVariantOptionSelect.classList.add("form-control", "mb-3"); // Add margin-bottom
-        // Add option values based on your requirements (e.g., size, flavor)
+        // Add option values (e.g., size, flavor)
         newVariantOptionSelect.innerHTML = `
             <option value="size">Size</option>
             <option value="flavor">Flavor</option>
-            <!-- Add more options if needed -->
         `;
         variantSection.insertBefore(newVariantOptionSelect, addAttributeBtn);
 
